@@ -1,0 +1,26 @@
+{% extends 'webapp/base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+
+<div class='container-fluid'>
+    <h1>{% trans "Terms of Service" %}</h1>
+
+    <h3>{% trans "Disclaimer" %}</h3>
+    <p>
+        {% blocktrans %}
+        The information provided within this site is strictly for the purposes
+        of information only and is not a replacement or substitute for
+        professional advice, doctors visit or treatment. Treatment for each
+        patient has to be planned considering various associated factors and
+        hence it can only be done by a qualified medical practioner. Hence the
+        provided content on this site should serve, at most, as a guide
+        alongwith professional consultation.
+        It should under no circumstance replace the advice of a healthcare
+        professional. You should always consult the Physician to decide best
+        treatment for you.
+        {% endblocktrans %}
+    </p>
+</div>
+{% endblock content %}

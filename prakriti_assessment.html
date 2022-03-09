@@ -1,0 +1,29 @@
+{% extends 'webapp/base.html' %}
+
+{% load i18n static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <h1 class="text-center">{% trans "Prakṛti assessment" %}</h1>
+    <div class="d-flex justify-content-center">
+        <div class="card text-center" style="min-width:50rem">
+            <div class="card-body">
+                <h2>{% trans "Prakṛti questionnaire" %}</h2>
+                <form method="post" action="appapi/prakritiquestionnaire/">
+                    {# action="{% url 'submit_svasthya_questionnaire' %}"> #}
+                    {% csrf_token %}
+                    <div id="id_prakriti_questionnaire">
+                        <i class="fa fa-spinner fa-spin fa-4x"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block extra_js %}
+<script src="{% static 'webapp/js/prakriti_assessment.js' %}"></script>
+{% endblock %}

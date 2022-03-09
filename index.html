@@ -1,0 +1,154 @@
+{% extends 'webapp/base.html' %}
+
+{% load i18n static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    {% if not request.user.is_authenticated %}
+    <div class="jumbotron">
+        <h1 class="display-4">
+            {% trans "Suprajā Abhiyān" %}
+        </h1>
+        <p class="lead">
+            {% blocktrans %}
+            Live a long, happy and fulfilling life with easy to follow
+            presonalised
+            and preventive healthcare recommendations based on Āyurveda.
+            {% endblocktrans %}
+        </p>
+        <hr class="my-4">
+        <p>
+            {% blocktrans %}
+            A public welfare initiative by <b>Rasāyu</b>, a leader in chronic
+            and
+            critical healthcare for more than 25 years.
+            {% endblocktrans %}
+        </p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg"
+                href="{% url 'webapp:about_rasayu' %}" role="button">
+                {% trans "About Rasāyu" %}
+            </a>
+        </p>
+    </div>
+    {% endif %}
+
+    <div class="card-deck">
+        <div class="card text-center">
+            {% comment %} <img class="card-img-top" src="..."
+                alt="Card image cap">
+            {% endcomment %}
+            <div class="card-header">
+                {% trans "Track and improve your wellness" %}
+            </div>
+            <div class="card-body">
+                {# Removed `.card-title` as otherwise title is not center aligned #}
+                <h5> {# class="card-title"> #}
+                    {% trans "Wellness (svāsthya) assessment" %}
+                </h5>
+                <p class="card-text">
+                    {% blocktrans %}
+                    Are you really healthy? Assess and track your health, follow
+                    simple tips and get the most out of your life! Get reminders
+                    for periodic assessments to track and maintain a good health
+                    or gradually improve it with relevant tips.
+                    {% endblocktrans %}
+                </p>
+                <div>
+                    <a class="btn btn-primary"
+                        href="{% url 'webapp:wellness_assessment' %}"
+                        role="button">
+                        {% trans "Assess your wellness" %}
+                    </a>
+                </div>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">
+                    <div id="id_last_wellness_assessment">
+                        <i class="fa fa-spinner fa-spin"></i>
+                    </div>
+                </small>
+            </div>
+        </div>
+        <div class="card text-center">
+            {% comment %} <img class="card-img-top" src="..."
+                alt="Card image cap">
+            {% endcomment %}
+            <div class="card-header">
+                {% trans "Seasonal routine and regimen" %}
+            </div>
+            <div class="card-body">
+                {# Removed `.card-title` as otherwise title is not center aligned #}
+                <h5> {# class="card-title"> #}
+                    {% trans "Prakṛti assessment" %}
+                </h5>
+                <p class="card-text">
+                    {% blocktrans %}
+                    Get personalised tips and reminders on adjusting your
+                    lifestyle
+                    as per the changing seasons. Take timely precautions to
+                    avoid
+                    seasonal ailments. All this personalised as per your
+                    prakṛti.
+                    {% endblocktrans %}
+                </p>
+                <div>
+                    <a class="btn btn-primary"
+                        href="{% url 'webapp:prakriti_assessment' %}"
+                        role="button">
+                        {% trans "Assess your prakṛti" %}
+                    </a>
+                </div>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">
+                    {% blocktrans %}
+                    Get seasonal tips and reminders.
+                    {% endblocktrans %}
+                </small>
+            </div>
+        </div>
+        <div class="card text-center">
+            {% comment %} <img class="card-img-top" src="..."
+                alt="Card image cap">
+            {% endcomment %}
+            <div class="card-header">
+                {% trans "Preventive healthcare tips" %}
+            </div>
+            <div class="card-body">
+                {# Removed `.card-title` as otherwise title is not center aligned #}
+                <h5> {# class="card-title"> #}
+                    {% trans "Risk factors assessment" %}
+                </h5>
+                <p class="card-text">
+                    {% blocktrans %}
+                    Get recommendations on preventive healthcare based on
+                    various
+                    factors such as your dhātu sāratā (quality of body tissues),
+                    family medical history, lifestyle, etc.
+                    {% endblocktrans %}
+                </p>
+                <div>
+                    <a class="btn btn-primary"
+                        href="{% url 'webapp:wellness_assessment' %}"
+                        role="button">
+                        {% trans "Assess your risk factors" %}
+                    </a>
+                </div>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">
+                    {% blocktrans %}
+                    Get preventive tips.
+                    {% endblocktrans %}
+                </small>
+            </div>
+        </div>
+    </div>
+</div> <!-- container -->
+{% endblock content %}
+
+{% block extra_js %}
+<script src="{% static 'webapp/js/index.js' %}"></script>
+{% endblock %}

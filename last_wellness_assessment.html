@@ -1,0 +1,18 @@
+{% load i18n static %}
+
+{% if next_assessment_date %}
+{% blocktrans %}
+Your next wellness assessment is/was due on
+{% endblocktrans %}
+<b>{{ next_assessment_date|date }}</b>.
+<a href="{% url 'webapp:svasthya_questionnaire' %}">
+    {% trans "Take your next assessment." %}
+</a>
+{% else %}
+{% blocktrans %}
+No follow up reminders yet.<br>
+{% endblocktrans %}
+<a href="{% url 'webapp:wellness_assessment' %}">
+    {% trans "Take your first assessment!" %}
+</a>
+{% endif %}

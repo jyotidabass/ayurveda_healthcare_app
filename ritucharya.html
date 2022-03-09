@@ -1,0 +1,585 @@
+{% load i18n %}
+
+<p>
+    {% blocktrans %}
+    Śaka date today: {{ indian_date }} (month {{ indian_month }}, season
+    {{ indian_season }})
+    {% endblocktrans %}
+</p>
+{% with prakriti_type=prakriti_type|lower ritu=indian_season|lower%}
+
+{% if prakriti_type|lower == 'kaphaj' %}
+
+{% if ritu == 'śiśir' %}
+
+<h4>
+    {% blocktrans %}
+    Recommendation for Kaphaj prakṛti - śiśir ṛtu (mid-January to mid-March)
+    {% endblocktrans %}
+</h4>
+<div class="text-left">
+    {% blocktrans %}
+    <ul>
+        <li>
+            Cereals – barley, corn, millet, rye, buckwheat.
+            Cereals in limited quantiy - oat, rice, wheat.
+        </li>
+        <li>
+            Pulses – Moog daal, red lentil.
+            Pulses in limited quantity - kidney beans, chickpeas, pinto, Lima,
+            Soy and split peas.
+        </li>
+        <li>
+            Oils – flaxseed, sunflower oil, ghee.
+        </li>
+        <li>
+            Milk products – low fat milk, yogurt or ghee made of low fat milk,
+            goat’s milk, sheep’s milk, soya milk.
+            Milk should be taken along with teaspoon of turmeric or ginger
+            which will reduce kapha increasing quality of milk.
+            Dairy products are known to increase kapha so better avoid them
+            or consume low fat, calorie version.
+        </li>
+        <li>
+            Vegetables – sweet bitter veggies like asparagus, cabbage, carrot,
+            garlic, radishes, onion, bean sprouts, green beans, peppers,
+            mushrooms, beetroot, etc.
+        </li>
+        <li>
+            Fruits – apple, pear, watermelon, pomegranate, apricot,
+            cranberries.
+            To be consumed in less quantity: bananas, pineapple, oranges,
+            coconut, dates.
+        </li>
+        <li>
+            Drinks - herbal tea, teas with cinnamon, ginger and bitter
+            substances, soups are best pacifying kapha.
+        </li>
+        <li>
+            Meat - chiken, turkey, eggs, prawns.
+        </li>
+        <li>
+            Seed and dry fruits - almond, chia seeds, pumpkin seed, sunflower
+            seeds.
+        </li>
+        <li>
+            Sweeteners - except for honey other sweeteners are better avoided.
+        </li>
+        <li>
+            Exercise – Kapha dominant people have highest endurance of all the
+            doshas and can perform any exercise for long period of time. It's
+            best that kapha person to exercise in the kapha time (early
+            morning) of day.
+        </li>
+        <li>
+            Ritucharya – kapha increases in shirish ritu so kapha person avoid
+            eating too sweet, fatty, heavy meals during this season. Engage in
+            moderate exercise and follow shishir ritu charya.
+        </li>
+    </ul>
+    {% endblocktrans %}
+</div>
+
+{% elif ritu == 'śarad' %}
+
+<h4>
+    {% blocktrans %}
+    Recommendation for Kaphaj prakṛti – śarad ṛtu (mid-September to
+    mid-November)
+    {% endblocktrans %}
+</h4>
+<div class="text-left">
+    {% blocktrans %}
+    <ul>
+        <li>
+            Cereals – barley, corn, millet, rye, buckwheat.
+            Cereals in limited quantiy - oat, rice, wheat.
+        </li>
+        <li>
+            Pulses – Moog daal, red lentil.
+            Pulses in limited quantity - kidney beans, chickpeas, pinto, Lima,
+            Soy and split peas.
+        </li>
+        <li>
+            Oils – flaxseed, sunflower oil, ghee.
+        </li>
+        <li>
+            Milk products – low fat milk, yogurt or ghee made of low fat milk,
+            goat’s milk, sheep’s milk, soya milk.
+            Milk should be taken along with teaspoon of turmeric or ginger
+            which will reduce kapha increasing quality of milk.
+            Dairy products are known to increase kapha so better avoid them
+            or consume low fat, calorie version.
+        </li>
+        <li>
+            Vegetables – sweet bitter veggies like asparagus, cabbage, carrot,
+            garlic, radishes, onion, bean sprouts, green beans, peppers,
+            mushrooms, beetroot, etc.
+        </li>
+        <li>
+            Fruits – apple, pear, watermelon, pomegranate, apricot,
+            cranberries.
+            To be consumed in less quantity: bananas, pineapple, oranges,
+            coconut, dates.
+        </li>
+        <li>
+            Drinks - herbal tea, teas with cinnamon, ginger and bitter
+            substances, soups are best pacifying kapha.
+        </li>
+        <li>
+            Meat - chiken, turkey, eggs, prawns.
+        </li>
+        <li>
+            Seed and dry fruits - almond, chia seeds, pumpkin seed, sunflower
+            seeds.
+        </li>
+        <li>
+            Sweeteners - except for honey other sweeteners are better avoided.
+        </li>
+        <li>
+            Exercise – Kapha dominant people have highest endurance of all the
+            doshas and can perform any exercise for long period of time. It's
+            best that kapha person to exercise in the kapha time (early
+            morning) of day.
+        </li>
+        <li>
+            As pitta dośa is prominent in this season try to avoid more spicy
+            food, hot drinks, or food/liquids of sour, salty, pungent taste.
+        </li>
+    </ul>
+    {% endblocktrans %}
+</div>
+
+{% elif ritu == 'hemanta' %}
+
+<h4>
+    {% blocktrans %}
+    Recommendation for Kaphaj prakṛti – hemanta ṛtu (mid-November to
+    mid-January)
+    {% endblocktrans %}
+</h4>
+<div class="text-left">
+    {% blocktrans %}
+    <ul>
+        <li>
+            Cereals – barley, corn, millet rye, buckwheat.
+            In limited quantity - oat, rice, wheat.
+        </li>
+        <li>
+            Pulses – Moog daal, red lentil.
+            In limited quantity - kidney beans, chickpeas, pinto, Lima, Soy
+            and
+            split peas.
+        </li>
+        <li>
+            Oils – flaxseed, sunflower oil, ghee.
+        </li>
+        <li>
+            Milk products – low fat milk, yogurt or ghee made of low fat
+            milk,
+            goat’s milk, sheep’s milk, soya milk.
+            Milk should be taken along with teaspoon of turmeric or ginger
+            which will reduce kapha increasing quality of milk.
+            Dairy products are known to increases kapha so better avoid them
+            or consume low fat, calorie version.
+        </li>
+        <li>
+            Vegetables – sweet bitter veggies like asparagus, cabbage,
+            carrot,
+            garlic, radishes, onion, bean sprouts, green beans, peppers,
+            mushrooms, beetroot, etc.
+        </li>
+        <li>
+            Fruits – apple, pear, watermelon, pomegranate, apricot,
+            cranberries.
+            In less quantity: bananas, pineapple, oranges, coconut, dates.
+        </li>
+        <li>
+            Drinks - herbal tea, teas with cinnamon , ginger and bitter
+            substances, soups are best pacifying kapha.
+        </li>
+        <li>
+            Meat - chiken, turkey, eggs, prawns.
+        </li>
+        <li>
+            Seed and dry fruits - almond, chia seeds, pumpkin seed,
+            sunflower
+            seed.
+        </li>
+        <li>
+            Sweeteners - except for honey other sweeteners are better
+            avoided.
+        </li>
+        <li>
+            Exercise – kapha dominant people have highest endurance of all
+            the
+            doshas and can perform any exercise for long period of time.
+            It's
+            best that kapha person to exercise in the kapha (early morning)
+            time of day.
+        </li>
+    </ul>
+    {% endblocktrans %}
+</div>
+
+{% endif %}
+<!--ritu-->
+
+{% elif prakriti_type == 'vataj' %}
+
+{% if ritu == 'śarad' %}
+
+<h4>
+    {% blocktrans %}
+    Recommendation for Vataj prakṛti – śarad ṛtu (mid-September to mid-November)
+    {% endblocktrans %}
+</h4>
+<div class="text-left">
+    {% blocktrans %}
+    <ul>
+        <li>
+            Cereals – whole wheat, Oats, Amaranth, Quinoa,brown rice.
+            In limited quantity - white refined flour, Rye, White Rice,
+            Dry oats.
+        </li>
+        <li>
+            Pulses – Moog daal, red lentil.
+            In limited quantity - kidney beans, chickpeas, pinto, Lima,
+            Soy and split peas.
+        </li>
+        <li>
+            Oils – cow ghee, sesame, almond oil, butter, olive oil, mustard oil,
+            peanut butter, sunflower oil.
+            In limited quantity - soy, canola, flaxseed oil.
+        </li>
+        <li>
+            Milk products – Buttermilk, cow milk, butter, cream, yogurt, rice
+            kheer, tofu.
+            In limited quantity - ice cream, powdered milk, whole milk, full fat
+            yogurt, cream cheese.
+        </li>
+        <li>
+            Vegetables – cooked onion, Avocado, Beets, carrots, cilantro,
+            parsley, sweet potatoes, green beans, Mustard, okra, peas (cooked),
+            potatoes, turnip (occasionally).
+            In limited quantity - Raw vegetables, cauliflower, Chard,
+            sprouts, cucumber, spinach, Brussels sprout, lettuce, mushroom,
+            cabbage, eggplant, potato.
+        </li>
+        <li>
+            Fruits – cherries, dates, grapes, mango, papaya, rasberries, figs,
+            apricots, peaches, plums, banana(ripe),apple
+            In limited quantity - cranberries, melon, dried fruits.
+        </li>
+        <li>
+            Drinks - to be consumed- fruit juice, Herbal tea
+            In limited quantity - beer, wine, coffee, hard alcohol, ice cold
+            drinks, soft drinks.
+        </li>
+        <li>
+            Non-veg food - egg white, fish, chicken, seafood, turkey, shell
+            fish.
+            In limited quantity - beef, lamb, pork, red meat, mutton.
+        </li>
+        <li>
+            Seed and dry fruits - almond, pine nuts, walnuts, cashew nut,
+            macadamia nuts, pumpkinseed (all to be taken soaked).
+            In limited quantity - sunflower seed, dry and roasted nuts.
+        <li>
+            Seweeteners - jaggery, molasses, non–refined sugar, Fruit sugar,
+            honey.
+            In limited quantity - brown sugar, white sugar, artificial
+            sweeteners.
+        </li>
+        <li>
+            Exercise – yoga and low intensity exercises are excellent.
+            Should avoid strenuous/ heavy exercise.
+            Pranayam will be very useful.
+        </li>
+    </ul>
+    {% endblocktrans %}
+</div>
+
+{% elif ritu == 'hemanta' %}
+
+<h4>
+    {% blocktrans %}
+    Recommendation for Vataj prakṛti – hemanta ṛtu (mid-November to
+    mid-January)
+    {% endblocktrans %}
+</h4>
+<div class="text-left">
+    {% blocktrans %}
+    <ul>
+        <li>
+            Cereals – whole wheat, Oats, Amaranth, Quinoa, brown
+            rice.
+            Cereals to be used in limited - white refined flour,
+            rye, white
+            rice, dry oats.
+        </li>
+        <li>
+            Pulses – Moog daal, red lentil.
+            In limited quantity - kidney beans, chickpeas, pinto,
+            Lima, Soy and
+            split peas.
+        </li>
+        <li>
+            Oils – cow ghee, sesame, almond oil, butter, olive oil,
+            mustard
+            oil, peanut butter, sunflower oil.
+            In limited quantity - soy, canola, flaxseed oil.
+        </li>
+        <li>
+            Milk products – Buttermilk, cow milk, butter, cream,
+            kefir, yogurt,
+            rice, kheer, tofu.
+            In limited quantity - ice cream, powdered milk, whole
+            milk, full fat
+            yogurt, cream cheese.
+        </li>
+        <li>
+            Vegetables – cooked onion, Avocado, Beets, carrots,
+            cilantro,
+            parsley, sweet potatoes, green beans, Mustard, okra,
+            peas (cooked),
+            potatoes, turnip (occasionally).
+            In limited quantity - Raw vegetables, cauliflower,
+            Chard, sprouts,
+            cucumber, spinach, Brussels sprout, lettuce, mushroom,
+            cabbage,
+            eggplant, potato.
+        </li>
+        <li>
+            Fruits – cherries, dates, grapes, mango, papaya,
+            rasberries, figs,
+            apricots, peaches, plums, banana (ripe), apple.
+            In limited quantity - cranberries, melon, dried fruits.
+        </li>
+        <li>
+            Drinks - fruit juice, herbal tea.
+            In limited quantity - beer, wine, coffee, hard alscohol,
+            ice cold
+            drinks, soft drinks.
+        </li>
+        <li>
+            Non-veg food - egg white, fish, chicken, seafood,
+            turkey, shell
+            fish.
+            In limited quantity - beef, lamb, pork, red meat,
+            mutton.
+        </li>
+        <li>
+            Seed and dry fruits - almond, pine nuts, walnuts, cashew
+            nut,
+            macadamia nuts, pumpkinseed (all to be taken soaked).
+            In limited quantity - sunflower seed, dry and roasted
+            nuts.
+        </li>
+        <li>
+            Seweeteners - jaggery, molasses, non–refined sugar,
+            fruit sugar,
+            honey.
+            In limited quantity - brown sugar, white sugar,
+            artificial
+            sweeteners.
+        </li>
+        <li>
+            Exercise – yoga and low intensity exercises are
+            excellent.
+            Should avoid strenuous/ heavy exercise.
+            Pranayam will be very useful.
+        </li>
+        <li>
+            Miscellaneous- vaat prakruti person will get benefit
+            from regular
+            massage with oil like sesame oil, sahachar oil, etc.
+            In this season the digestive fire and energy of human
+            being is
+            naturally at its high so it allowed to consumed sweet,
+            sour, salty
+            taste food, unctuous, heavy quality food/drink and to do
+            moderate
+            exercise in this period.
+        </li>
+    </ul>
+    {% endblocktrans %}
+</div>
+{% endif %}
+
+{% elif prakriti_type == 'pittaj' %}
+
+{% if ritu == 'śarad' %}
+
+<h4>
+    {% blocktrans %}
+    Recommendation for Pittaj prakṛti – śarad ṛtu (mid-September to
+    mid-November)
+    {% endblocktrans %}
+</h4>
+<div class="text-left">
+    {% blocktrans %}
+    <ul>
+        <li>
+            Cereals – whole wheat, Oats, barley, white rice.
+            In limited quantity - white refined flour, Rye, White
+            Rice, Dry
+            oats.
+        </li>
+        <li>
+            Pulses – Moog daal, red lentil.
+            In limited quantity - kidney beans, chickpeas, pinto,
+            Lima, Soy and
+            split peas.
+        </li>
+        <li>
+            Oils - cow ghee, olive oil, coconut oil, sunflower oil.
+        </li>
+        <li>
+            Milk products – Buttermilk, cow milk, unsalted butter.
+            In limited quantity - ice cream, powdered milk, whole
+            milk, full fat
+            yogurt, cream cheese, sour cream.
+        </li>
+        <li>
+            Vegetables – sweet bitter veggies like asparagus,
+            cabbage, cucumber,
+            cauliflower, cooked onion, Beets, carrots, cilantro,
+            green beans,
+            potatoes, mushrooms, etc.
+            In limited quantity: Radish, garlic, tomatoes, onion.
+        </li>
+        <li>
+            Fruits – sweet fruits like Avocado, figs, plums, orange,
+            pomegranates, melon, grapes, mangos, bananas.
+            Should not eat fruits in evening or before or after
+            meals, also
+            sour fruits like apple, lemon, dried fruits avoided.
+        </li>
+        <li>
+            Drinks - plenty of cooling water (body temperature),
+            mellow, sweet
+            juices, fennel tea.
+        </li>
+        <li>
+            Meat - meat to be consumed in less quantity in this
+            season as it may
+            aggravate pitta dosha. Eggs in moderate, other meat and
+            fish
+            products should be avoided.
+        </li>
+        <li>
+            Seed and dry fruits - stick with cooling nuts almond,
+            sunflower
+            seed (all to be taken soaked).
+        </li>
+        <li>
+            Sweeteners - Most natural sugars in small amounts, try
+            to avoid old
+            honey molassess and white sugar.
+        </li>
+        <li>
+            Exercise – pitta prakruti person will get benefit from
+            cooling,
+            slow, dense activities like moderate hiking, swimming ,
+            weight
+            lifting, yoga.
+        </li>
+        <li>
+            Pitta dosha increases in śarad ritu so the detoxication
+            process
+            Virecanā is advised in this season.
+        </li>
+    </ul>
+    {% endblocktrans %}
+</div>
+
+{% elif ritu == 'hemanta' %}
+
+<h4>
+    {% blocktrans %}
+    Recommendation for Pittaj prakṛti – hemanta ṛtu (mid-November to
+    mid-January)
+    {% endblocktrans %}
+</h4>
+<div class="text-left">
+    {% blocktrans %}
+    <ul>
+        <li>
+            Cereals – whole wheat, oats, barley.
+            In limited quantity - white refined flour, rye, white
+            rice, dry
+            oats.
+        </li>
+        <li>
+            Pulses – Moog daal, red lentil.
+            In limited quantity - kidney beans, chickpeas, pinto,
+            Lima, Soy and
+            split peas.
+        </li>
+        <li>
+            Oils – cow ghee, olive oil, coconut oil, sunflower oil.
+        </li>
+        <li>
+            Milk products – Buttermilk, cow milk, unsalted butter.
+            In limited quantity - ice cream, powdered milk, whole
+            milk, full fat
+            yogurt, cream cheese, sour cream.
+        </li>
+        <li>
+            Vegetables – sweet bitter veggies like asparagus,
+            cabbage,
+            cucumber, cauliflower, cooked onion, beets, carrots,
+            cilantro, green
+            beans, potatoes, mushrooms, etc.
+            In limited quantity: Radish, garlic, tomatoes, onion.
+        </li>
+        <li>
+            Fruits – sweet fruits like Avocado, figs, plums, orange,
+            pomegranates, melon, grapes, mangos, bananas.
+            Should not eat fruits in evening or before or after
+            meals. Also
+            sour fruits like apple, lemon, dried fruits to be
+            avoided.
+        </li>
+        <li>
+            Drinks - plenty of cooling water( body temperature),
+            mellow, sweet
+            juices, fennel tea.
+        </li>
+        <li>
+            Meat - Eggs in moderate, other meat and fish products
+            should be
+            avoided.
+            To be used limited- beef, lamb, pork, red meat, mutton.
+        </li>
+        <li>
+            Seed and dry fruits - stick with cooling nuts almond,
+            sunflower seed
+            (all to be taken soaked).
+        </li>
+        <li>
+            Sweeteners - Most natural sugars in small amounts, try
+            to avoid old
+            honey molassess and white sugar.
+        </li>
+        <li>
+            Exercise – pitta prakruti person will get benefit from
+            cooling,
+            slow, dense activities like moderate hiking, swimming,
+            weight
+            lifting, yoga.
+        </li>
+    </ul>
+    {% endblocktrans %}
+</div>
+
+{% elif ritu == 'śiśir' %}
+
+{% endif %}
+<!--ritu-->
+
+{% endif %}
+<!--prakriti_type-->
+
+{% endwith %}

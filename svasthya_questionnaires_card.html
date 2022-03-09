@@ -1,0 +1,48 @@
+{% load i18n %}
+
+{% if svasthya_questionnaires %}
+<div class="d-flex justify-content-center">
+    <div class="card text-center" style="min-width:50rem">
+        <div class="card-body">
+            <h2>{% trans "Wellness (svāsthya) questionnaires"%}</h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">{% trans "Date" %}</th>
+                            <th scope="col">{% trans "Score (out of 32)" %}</th>
+                            <th scope="col">{% trans "View questionnaire" %}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for sq in svasthya_questionnaires %}
+                        <tr>
+                            <td scope="row">{{ sq.date }}</td>
+                            <td>{{ sq.score }}</td>
+                            <td>
+                                <a
+                                    href="{% url 'webapp:svasthya_questionnaire' pk=sq.pk %}">
+                                    {% trans "View" %}
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer">
+            <span>
+                {% blocktrans %}
+                Your next assessment is/was due on
+                {% endblocktrans %}
+                <b>{{ next_assessment_date|date }}</b>.
+                <a href="{% url 'webapp:svasthya_questionnaire' %}">
+                    {% trans "Take your next assessment." %}
+                </a>
+            </span>
+        </div>
+    </div>
+</div>
+{% endif %}

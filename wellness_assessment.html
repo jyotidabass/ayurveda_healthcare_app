@@ -1,0 +1,219 @@
+{% extends 'webapp/base.html' %}
+
+{% load i18n static %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <h1 class="text-center">{% trans "Wellness assessment" %}</h1>
+
+    <div id="id_no_questionnaires" style="display: none;">
+        <p class="lead">
+            {% blocktrans %}
+            No assessment done yet.
+            {% endblocktrans %}
+            <a href="{% url 'webapp:svasthya_questionnaire' %}">
+                {% trans "Take your first assessment." %}
+            </a>
+        </p>
+    </div>
+
+    <div id="id_svasthya_questionnaires_card" class="text-center">
+        <i class="fa fa-spinner fa-spin fa-4x"></i>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <div class="card text-center" style="width:50rem;min-width:50rem;">
+            <div class="card-body">
+
+                <h2>{% trans "Wellness tips" %}</h2>
+                <table class="table text-left">
+                    <thead>
+                        <tr>
+                            <th scope="col">{% trans "Question" %}</th>
+                            <th scope="col">
+                                {% trans "Tips for improving and maintaining good health" %}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                {% blocktrans %}
+                                How well do you manage to do your routine work
+                                comfortably?
+                                {% endblocktrans %}
+                            </th>
+                            <td>
+                                {% blocktrans %}
+                                <ol>
+                                    <li>Try reducing your food intake by 20%.
+                                    </li>
+                                    <li>Drink water in proportion to your
+                                        thirst: Avoid drinking excess water.
+                                    </li>
+                                    <li>Avoid sleeping in afternoon, especially
+                                        immediately after lunch.
+                                    </li>
+                                    <li>Avoid excessive, untimely exercise.</li>
+                                    <li>Avoid sexual interaction prior to hectic
+                                        schedule.
+                                    </li>
+                                </ol>
+                                {% endblocktrans %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                {% blocktrans %}
+                                What is your level of enthusiasm on waking up in
+                                the morning?
+                                {% endblocktrans %}
+                            </th>
+                            <td>
+                                {% blocktrans %}
+                                <ol>
+                                    <li>Avoid eating late dinners.</li>
+                                    <li>Proportionately reduce food intake as
+                                        per delay in dinner time.</li>
+                                    <li>Sleep early and wake up early to feel
+                                        enthusiastic.</li>
+                                </ol>
+                                {% endblocktrans %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                {% blocktrans %}
+                                How good is your appetite?
+                                {% endblocktrans %}
+                            </th>
+                            <td>
+                                {% blocktrans %}
+                                <ol>
+                                    <li>Avoid grazing during the day to have
+                                        good appetite during meals.</li>
+                                    <li>Avoid having water before meals.</li>
+                                    <li>Good exercise helps increase appetite.
+                                    </li>
+                                </ol>
+                                {% endblocktrans %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                {% blocktrans %}
+                                How well do you relish your meals?
+                                {% endblocktrans %}
+                            </th>
+                            <td>
+                                {% blocktrans %}
+                                <ol>
+                                    <li>Timely meals help develop relish in
+                                        food.
+                                    </li>
+                                    <li>Avoid any distractions while consuming
+                                        food.
+                                    </li>
+                                    <li>Focus on food while eating.</li>
+                                    <li>Have fresh, home-made food.</li>
+                                </ol>
+                                {% endblocktrans %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                {% blocktrans %}
+                                How regular and satisfactory is your bowel
+                                movement?
+                                {% endblocktrans %}
+                            </th>
+                            <td>
+                                {% blocktrans %}
+                                <ol>
+                                    <li>Regular exercises are necessary for
+                                        regular bowel movement.</li>
+                                    <li>Stress has adverse effect on bowel
+                                        movement. Meditation and pranayam help
+                                        relieve stress.
+                                    </li>
+                                    <li>Have half glass of warm water with 1
+                                        teaspoon desi ghee in the night to have
+                                        good bowel next day.
+                                    </li>
+                                </ol>
+                                {% endblocktrans %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                {% blocktrans %}
+                                Do you have timely and sound sleep?
+                                {% endblocktrans %}
+                            </th>
+                            <td>
+                                {% blocktrans %}
+                                <ol>
+                                    <li>Regular pranayam in the night.</li>
+                                    <li>Prayers/ meditation in the night.</li>
+                                    <li>Avoid indulging in any stimulating
+                                        activity before sleep.</li>
+                                </ol>
+                                {% endblocktrans %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                {% blocktrans %}
+                                How comfortably do you pass urine?
+                                {% endblocktrans %}
+                            </th>
+                            <td>
+                                {% blocktrans %}
+                                <ol>
+                                    <li>Avoid excess water to reduce urine
+                                        quantity.
+                                    </li>
+                                    <li>Drink water only in proportion to your
+                                        thirst.
+                                    </li>
+                                    <li>Drink less water after sunset.</li>
+                                </ol>
+                                {% endblocktrans %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                {% blocktrans %}
+                                How content are you with life?
+                                {% endblocktrans %}
+                            </th>
+                            <td>
+                                {% blocktrans %}
+                                <ol>
+                                    <li>Regular meditation, pranayam.</li>
+                                    <li>Try to reduce your desires.</li>
+                                    <li>Lead a simple life.</li>
+                                    <li>Be in company of good people.</li>
+                                </ol>
+                                {% endblocktrans %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block extra_js %}
+<script type="text/javascript" charset="utf-8">
+    // GLOBALS
+    const RHCAPP = {
+        CRF_PATIENT_PK: "{{ user.profile.crf_patient_pk }}",
+    };
+</script>
+<script src="{% static 'webapp/js/wellness_assessment.js' %}"></script>
+{% endblock %}

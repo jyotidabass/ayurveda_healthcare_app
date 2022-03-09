@@ -1,0 +1,23 @@
+{% extends 'webapp/base.html' %}
+
+{% load i18n static %}
+
+{% block content %}
+
+<div class='container-fluid'>
+
+    <h1 class="text-center">{% trans "Wellness assessment" %}</h1>
+
+    <div id="id_svasthya_questionnaire" class="text-center">
+        <i class="fa fa-spinner fa-spin fa-4x"></i>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block extra_js %}
+<script>
+    const questionnairePK = '{{ pk }}';
+</script>
+<script src="{% static 'webapp/js/svasthya_questionnaire.js' %}"></script>
+{% endblock %}

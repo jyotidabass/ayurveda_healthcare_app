@@ -1,0 +1,91 @@
+{% load i18n %}
+
+{% if property_options_zip %}
+
+<p>
+    {% blocktrans %}
+    Answer the following questionnaire to know about your prakṛti. Based on your
+    prakṛti, we can give you personalized recommendations for following a better
+    daily and seasonal routine and regimen (dinacaryā and ṛtucaryā).
+    {% endblocktrans %}
+</p>
+<form method="post" action="appapi/prakritiquestionnaire/">
+    {% csrf_token %}
+    {% for pt, options in property_options_zip %}
+    <div class="form-group row justify-content-center">
+        <input type="hidden" readonly value={{ pt.order }}
+            name="p-{{ pt.order }}">
+        </input>
+        <label for="id_response_{{ forloop.counter }}"
+            class="col-md-6 col-form-label text-left">
+            {{ forloop.counter }}.
+            {{ pt.name }}
+        </label>
+        <div class="col-md-4 text-left">
+            <select class="form-control" required
+                id="id_response_{{ forloop.counter }}" name="o-{{ pt.order }}">
+                {% for option in options %}
+                <option value="{{ option.id }}">
+                    {{ option.name }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+    <button class="btn btn-primary" type="submit">
+        {% trans 'Submit' %}
+    </button>
+    <a type="button" class="btn btn-secondary" href="{% url 'webapp:index' %}">
+        {% trans 'Back' %}
+    </a>
+</form>
+
+{% elif questionnaire %}
+
+<p>
+    {% blocktrans with date=questionnaire.date %}
+    You answered the Prakṛti questionnaire on <b>{{ date }}</b>. As per
+    your responses, your Prakṛti impression is:
+    {% endblocktrans %}
+</p>
+<h5>
+    <b>
+        <span>
+            {% for pt, score in questionnaire.prakriti_impression %}
+            {{ pt }}: {{ score }} {% if not forloop.last %};{% endif %}
+            {% endfor %}
+        </span>
+    </b>
+</h5>
+
+<div id="id_ritucharya">
+    <i class="fa fa-spinner fa-spin fa-4x"></i>
+</div>
+
+
+<div>
+    <caption>{% trans "Answered questionnaire" %}</caption>
+    <table class="table table-sm text-left">
+        <thead>
+            <tr>
+                <th scope="col">Property</th>
+                <th scope="col">Option</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for po in questionnaire.prakṛti_properties %}
+            <tr>
+                <th scope="row">{{ po.property.name }}</th>
+                <td>{{ po.option.name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<a type="button" class="btn btn-secondary" href="{% url 'webapp:index' %}">
+    {% trans 'Back' %}
+</a>
+
+{% endif %}

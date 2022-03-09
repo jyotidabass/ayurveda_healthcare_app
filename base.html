@@ -1,0 +1,27 @@
+{% extends 'adminlte/base.html' %}
+{% load static i18n %}
+
+{% block title %}Suprajā Abhiyān{% endblock %}
+
+{% block messages %}
+{{ block.super }}
+<div id="id_ajax_error" class="alert alert-danger alert-dismissible"
+    style="display: none">
+    <button type="button" class="close" data-dismiss="alert"
+        aria-hidden="true">&times;</button>
+    <span>
+        <span id="id_ajax_error_message"></span>
+        <span id="id_ajax_default_error_message">
+            {% trans "Sorry, something went wrong. Please try again later." %}
+        </span>
+    </span>
+</div>
+{% endblock messages %}
+
+{% block extra_head %}
+<script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js">
+</script>
+<script src="{% static 'webapp/js/webapp.js' %}"></script>
+<link rel="shortcut icon" href="{% static 'webapp/favicon.png' %}">
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "account/base.html" %}
+
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center">
+    <div class="card text-center" style="width:30rem">
+        <div class="card-body">
+
+            <h1>{% trans "Sign In" %}</h1>
+
+            {% get_providers as socialaccount_providers %}
+
+            {% if socialaccount_providers %}
+
+            <p>
+                {% blocktrans with site.name as site_name %}
+                Please sign in with one of your existing third party accounts.
+                Or, <a href="{{ signup_url }}">sign up</a>
+                for a {{ site_name }} account and sign in below:
+                {% endblocktrans %}
+            </p>
+
+            <div class="socialaccount_ballot">
+
+                <ul class="socialaccount_providers">
+                    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+                </ul>
+
+                <div class="login-or">{% trans 'or' %}</div>
+
+            </div>
+
+            {% include "socialaccount/snippets/login_extra.html" %}
+
+            {% else %}
+
+            <p class="text-left">
+                {% blocktrans %}
+                If you have not created an account yet, then please either
+                <a href="{{ signup_url }}">sign up</a> first or sign in with
+                following demo account credentials:<br>
+                Demo username: demo@rasayu.com<br>
+                Password: demopass<br>
+                <b>Note that demo account data is periodically deleted.</b>
+                {% endblocktrans %}
+            </p>
+
+            {% endif %}
+
+            <form class="login" method="POST"
+                action="{% url 'account_login' %}">
+                {% csrf_token %}
+                {# {{ form.as_p }} #}
+                {{ form|crispy }}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}"
+                    value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button class="primaryAction btn btn-success btn-block"
+                    type="submit">
+                    {% trans "Sign In" %}
+                </button>
+                <small>
+                    <a class="button secondaryAction"
+                        href="{% url 'account_reset_password' %}">
+                        {% trans "Forgot Password?" %}
+                    </a>
+                </small>
+            </form>
+
+        </div>
+    </div>
+</div> {# d-flex #}
+
+{% endblock %}

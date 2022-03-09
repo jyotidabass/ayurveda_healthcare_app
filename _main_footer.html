@@ -1,0 +1,26 @@
+{% extends 'adminlte/lib/_main_footer.html' %}
+
+{% load i18n %}
+
+{% block footer_right %}
+{% blocktrans %}
+Developed by
+<a href="https://www.praniya.com" target="_blank">
+    Praniya Technologies
+</a>
+{% endblocktrans %}
+{% endblock %}
+
+{% block legal %}
+<span>
+    <b>
+        {% trans "Copyright &copy;" %}
+        {% now "Y" %}
+        <a href="https://www.rasayucancerclinic.com" target="_blank">
+            {% trans "Rasāyu" %}
+        </a>.
+    </b>
+    {% trans "All rights reserved." %}
+    <a href="{% url 'webapp:tos' %}">{% trans "Terms" %}</a>
+</span>
+{% endblock %}
